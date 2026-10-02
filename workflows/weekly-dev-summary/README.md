@@ -68,8 +68,11 @@ upstream is unchanged.
 screenshot is included.** I am not going to present an unexecuted workflow as
 tested. Specifically:
 
-- The test machine runs **Node 26.7.0**; n8n supports Node 20–24, so a local
-  install is not a supported configuration.
+- **I attempted the local install and it failed.** `npm install n8n` on this machine
+  (Node 26.7.0) dies compiling the native `@confluentinc/kafka-javascript` module under
+  `node-gyp` (`gyp ERR! not ok`, then `=== install exit: 1 ===`). n8n supports Node
+  20–24; Node 26 is outside that range, so this is not a configuration I could work
+  around from here. This is an observed failure, not a guess.
 - A full end-to-end run also needs an **Anthropic API key**, which was not
   available here — so the `Claude API` node could not have produced a real
   response regardless.
