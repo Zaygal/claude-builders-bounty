@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Entry point so the tool can be invoked exactly as documented:
+#
+#     claude-review --pr https://github.com/owner/repo/pull/123
+#
+# Symlink or copy this into a directory on your PATH, e.g.:
+#     ln -s "$PWD/claude-review" /usr/local/bin/claude-review
+exec python3 "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/claude-review.py" "$@"
